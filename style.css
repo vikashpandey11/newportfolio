@@ -1,0 +1,200 @@
+/* Modern enhancements styles — dark/light hybrid */
+:root{
+  --bg:#0b0f1a;
+  --card:#0f1724;
+  --muted:#94a3b8;
+  --accent:#8b5cf6;
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:linear-gradient(180deg,#07070a 0%, #0a0d14 100%);color:#e6eef8;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:20px;}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+
+/* Header/brand */
+.site-header{background:linear-gradient(90deg,#061226 0%, #07102a 100%);position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(255,255,255,0.03);backdrop-filter: blur(6px);}
+.brand{display:flex;align-items:center;gap:16px}
+.avatar-wrap{width:72px;height:72px;border-radius:14px;overflow:hidden;border:2px solid rgba(139,92,246,0.14);box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+.avatar{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease,filter .35s ease}
+.avatar:hover{transform:scale(1.06);filter:drop-shadow(0 6px 18px rgba(139,92,246,0.25))}
+.brand-text h1{margin:0;font-size:1.15rem;letter-spacing:0.2px}
+.brand-text .muted{color:var(--muted);font-size:0.85rem;margin-top:4px}
+
+/* Nav */
+.main-nav{display:flex;gap:12px;align-items:center}
+.main-nav a{color:rgba(230,238,248,0.9);text-decoration:none;padding:10px 12px;border-radius:8px;font-size:0.95rem;transition:background .2s,transform .15s}
+.main-nav a:hover{background:linear-gradient(90deg, rgba(139,92,246,0.12), transparent);transform:translateY(-3px)}
+
+/* Panels */
+.panel{margin:28px 0;padding:26px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+.panel-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;align-items:start}
+
+/* Text & CTA */
+.panel-text h2{margin:0 0 8px 0;color:var(--accent);font-size:1.6rem}
+.muted{color:var(--muted);font-size:0.95rem}
+.cta-row{display:flex;gap:12px;margin-top:14px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#ec4899);color:white;box-shadow:0 8px 22px rgba(139,92,246,0.12)}
+.btn.ghost{background:transparent;color:var(--muted);border:1px dashed rgba(255,255,255,0.04)}
+
+/* Meta card */
+.meta-card{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.03)}
+.meta-list{list-style:none;padding:0;margin:0}
+.meta-list li{padding:8px 0;color:var(--muted);font-size:0.95rem}
+
+/* Skills grid */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:12px}
+.skill-group{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.group-title{margin:0 0 10px 0;color:#c7b3ff}
+
+/* Accordion */
+.accordion .item{border-radius:10px;overflow:hidden;margin-bottom:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+.item-toggle{width:100%;text-align:left;padding:12px 14px;border:0;background:transparent;color:inherit;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:0.98rem}
+.item-toggle::after{content:'+';opacity:0.9}
+.item.active .item-toggle::after{content:'−'}
+.item-panel{padding:0 14px 14px 14px;display:none;color:var(--muted);font-size:0.95rem}
+.item.active .item-panel{display:block;animation:slideDown .28s ease both}
+@keyframes slideDown{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* Timeline */
+.timeline{border-left:3px solid rgba(139,92,246,0.14);padding-left:18px;margin-top:12px;display:flex;flex-direction:column;gap:18px}
+.timeline-item{display:flex;gap:14px;align-items:flex-start}
+.timeline-dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 4px 14px rgba(139,92,246,0.18);margin-top:6px;}
+.timeline-body h3{margin:0;color:#ffd6ff;font-size:1.05rem}
+.timeline-body .meta{color:var(--muted);font-size:0.88rem;margin:6px 0}
+
+/* Items list (projects/enhancements) */
+.items-list{display:grid;gap:12px}
+.item-card{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.item-card .item-toggle{background:transparent;border:0;width:100%;text-align:left;padding:8px 10px;font-weight:700;color:#e6eef8;cursor:pointer}
+.item-card .item-panel{display:none;padding:8px 10px;color:var(--muted)}
+.item-card.active .item-panel{display:block;animation:slideDown .28s ease both}
+
+/* Resume & contact */
+.resume-cta{display:flex;gap:12px;align-items:center}
+.contact-form{margin-top:12px}
+.form-row{display:flex;gap:12px}
+input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.01);color:#e6eef8}
+.form-actions{display:flex;gap:12px;align-items:center;margin-top:10px}
+.note{font-size:0.9rem;color:var(--muted)}
+
+/* Footer */
+.site-footer{padding:20px;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:var(--muted)}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(8px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:980px){ .panel-grid{grid-template-columns:1fr} .skills-grid{grid-template-columns:1fr} .main-nav{display:none} .avatar-wrap{width:56px;height:56px} }
+@media (max-width:600px){ .form-row{flex-direction:column} }
+
+/* Education Section Container Effect */
+#education {
+  transition: all 0.3s ease-in-out;
+}
+#education:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4); /* Orange glow */
+  background-color: rgba(255, 165, 0, 0.05); /* Light orange tint */
+}
+
+/* Each Education Item Hover Effect */
+#education li {
+  transition: all 0.3s ease-in-out;
+}
+#education li:hover {
+  background-color: rgba(255, 165, 0, 0.15);
+  border-left: 3px solid rgba(255, 140, 0, 0.9); /* Dark orange left border */
+  padding-left: 8px;
+}
+
+
+
+/* Skills Section Container Effect */
+#skills {
+  transition: all 0.4s ease-in-out;
+}
+#skills:hover {
+  background: rgba(163, 112, 2, 0.05); /* Light aqua tint */
+  box-shadow: 0 4px 20px rgba(167, 4, 72, 0.3);
+  border-radius: 8px;
+  transform: translateY(-3px);
+}
+
+
+/* Resume Button Initial */
+.resume-btn {
+    background: linear-gradient(135deg, #2196f3, #0d47a1);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Hover Effect */
+.resume-btn:hover {
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 15px rgba(33, 150, 243, 0.5);
+}
+
+/* Click Effect */
+.resume-btn:active {
+    background: linear-gradient(135deg, #43a047, #1b5e20);
+    transform: translateY(0px) scale(0.98);
+}
+
+/* enhancements Enhancement section */
+#enhancements {
+  transition: all 0.3s ease-in-out;
+}
+#enhancements:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 128, 255, 0.4);
+}
+#enhancements li {
+  transition: all 0.3s ease-in-out;
+}
+#enhancements li:hover {
+  border-bottom: 2px solid rgba(0, 128, 255, 0.7);
+  padding-left: 5px;
+}
+
+/* Projects Section Container Effect */
+#projects {
+  transition: all 0.4s ease-in-out;
+}
+#projects:hover {
+  background: rgba(0, 255, 128, 0.05); /* Light green tint */
+  box-shadow: 0 4px 20px rgba(0, 255, 128, 0.35); /* Light green glow */
+  border-radius: 8px;
+  transform: translateY(-3px);
+}
+
+/* Each Project Item Effect */
+#projects li {
+  transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+}
+#projects li:hover {
+  background: rgba(94, 7, 7, 0.15);
+  box-shadow: 0 0 10px rgba(0, 140, 255, 0.6);
+  transform: scale(1.05);
+}
+
+
